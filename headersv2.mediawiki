@@ -118,7 +118,7 @@ To take advantage of these possible savings, this document defines a variable-si
 | Reserved. May be used in a future encoding version to signal another indicator byte.
 |}
 
-The compressed header format is versioned by a 256-bit unsigned integer. This document defines version 0.
+The compressed header format is versioned by a 8-bit unsigned integer. This document defines version 0.
 
 ==== VLQ ====
 
@@ -257,8 +257,8 @@ This BIP allocates a new service bit:
 # The interval SHOULD match the field in the <code>getcheckpts</code> request
 # The start_checkpoint SHOULD correspond to the first block hash in the locator from the <code>getcheckpts</code> request that is part of the active chain
 # The end_checkpoint SHOULD correspond to the tip of the node's active chain
-# The start_height MOST be set to the block height of the start_checkpoint
-# The end_height MOST be set to the block height of the end_checkpoint
+# The start_height MUST be set to the block height of the start_checkpoint
+# The end_height MUST be set to the block height of the end_checkpoint
 # If the interval is zero, the checkpoints vector MUST be empty
 # If the interval is non-zero, checkpoints MUST correspond to blocks on the active chain between the start_checkpoint and the end_checkpoint (exclusive), where the difference in block height between each entry and the previous one is equal to the interval
 # The checkpoints_length MUST be less than or equal to 2,000
